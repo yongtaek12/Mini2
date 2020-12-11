@@ -7,5 +7,13 @@
   <select id="selectAll" resultType="boardVo">
     select * from board
   </select>
-  
+  <select id="selectByNo" resultType="boardVo">
+  	select * from board where no=#{no}
+  </select>
+  <insert id="insert">
+  	insert into board values(#{no}, #{title}, #{writer},#{pwd}, #{content}, sysdate, #{hit}, #{fname})
+  </insert>
+  <select id="nextNo" resultType="java.lang.Integer">
+  	select nvl(max(no),0)+1 from board
+  </select>
 </mapper>

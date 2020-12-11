@@ -33,6 +33,30 @@ public class BoardManager {
 		session.close();
 		return list;
 	}
-	
+	public static BoardVo findByNo(int no) {
+		BoardVo b = null;
+		SqlSession session = 
+		sqlSessionFactory.openSession();
+		b = session.selectOne("board.selectByNo", no);
+		session.close();
+		return b;
+	}
+	public static int insert(BoardVo b) {
+		int re = -1;
+		SqlSession session = 
+		sqlSessionFactory.openSession();
+		re=session.insert("board.insert",b);
+		session.close();
+		return re;
+				
+	}
+	public static int getNextNo() {
+		int n  = 0;
+		SqlSession session
+		= sqlSessionFactory.openSession();
+		n = session.selectOne("board.nextNo");
+		session.close();
+		return n;
+	}
 	
 }

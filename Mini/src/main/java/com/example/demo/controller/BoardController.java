@@ -24,6 +24,9 @@ public class BoardController {
 	public void list(Model model) {
 		model.addAttribute("list", dao.findAll());
 	}
-	
+	@RequestMapping("/detailBoard.do")
+	public void detail(int no, Model model) {
+		model.addAttribute("b", dao.findByNo(no));
+	}
 
 }

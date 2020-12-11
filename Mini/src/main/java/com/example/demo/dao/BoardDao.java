@@ -16,4 +16,14 @@ public class BoardDao {
 	public List<BoardVo> findAll(){
 		return BoardManager.findAll();
 	}
+	public BoardVo findByNo(int no) {
+		return BoardManager.findByNo(no);
+	}
+	public int insert(BoardVo b) {
+		return BoardManager.insert(b);
+	}
+	public int getNextNo() {
+		// TODO Auto-generated method stub
+		return BoardManager.getNextNo();
+	}
 }
