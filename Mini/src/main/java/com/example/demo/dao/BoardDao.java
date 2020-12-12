@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,10 @@ public class BoardDao {
 	public int getNextNo() {
 		// TODO Auto-generated method stub
 		return BoardManager.getNextNo();
+	}
+
+	public int updateStep(HashMap map) {
+		// TODO Auto-generated method stub
+		return BoardManager.updateStep(map);
 	}
 }

@@ -27,7 +27,7 @@
 		글암호 : <input type="password" name="pwd"><br>
 		글내용 : <br>
 		<textarea rows="10" cols="60" name="content"></textarea><br>
-		파일 : <input type="fname" name="uploadFile"><br>
+		파일 : <input type="file" name="uploadFile"><br>
 		
 		<input type="submit" value="등록">
 		<input type="reset" value="취소">

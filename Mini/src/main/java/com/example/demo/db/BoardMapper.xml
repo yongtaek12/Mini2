@@ -11,9 +11,13 @@
   	select * from board where no=#{no}
   </select>
   <insert id="insert">
-  	insert into board values(#{no}, #{title}, #{writer},#{pwd}, #{content}, sysdate, #{hit}, #{fname})
+  	insert into board values(#{no},#{title},#{writer},#{pwd},#{content},sysdate,#{hit},#{b_ref},#{b_level},#{b_step},#{fname},#{ip})
   </insert>
+  
   <select id="nextNo" resultType="java.lang.Integer">
   	select nvl(max(no),0)+1 from board
   </select>
+    <update id="updateStep">
+  	update board set b_step = b_step + 1 where b_ref=#{b_ref} and b_step > #{b_step}
+  </update>
 </mapper>

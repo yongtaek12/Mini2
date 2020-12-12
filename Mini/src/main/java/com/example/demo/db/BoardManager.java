@@ -1,6 +1,7 @@
 package com.example.demo.db;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -42,14 +43,14 @@ public class BoardManager {
 		return b;
 	}
 	public static int insert(BoardVo b) {
-		int re = -1;
-		SqlSession session = 
-		sqlSessionFactory.openSession();
-		re=session.insert("board.insert",b);
+		int re =  -1;
+		SqlSession session
+		= sqlSessionFactory.openSession(true);
+		re = session.insert("board.insert", b);
 		session.close();
 		return re;
-				
 	}
+	
 	public static int getNextNo() {
 		int n  = 0;
 		SqlSession session
@@ -57,6 +58,14 @@ public class BoardManager {
 		n = session.selectOne("board.nextNo");
 		session.close();
 		return n;
+	}
+	public static int updateStep(HashMap map) {
+		int re = -1;
+		SqlSession session
+		= sqlSessionFactory.openSession(true);
+		re = session.update("board.updateStep", map);
+		session.close();
+		return re;
 	}
 	
 }
