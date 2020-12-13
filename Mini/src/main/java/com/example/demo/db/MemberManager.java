@@ -1,12 +1,14 @@
 package com.example.demo.db;
 
 import java.io.InputStream;
+import java.util.HashMap;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.example.demo.vo.BoardVo;
 import com.example.demo.vo.MemberVo;
 
 public class MemberManager {
@@ -31,5 +33,14 @@ public class MemberManager {
 		re = session.insert("member.insert", m);
 		session.close();
 		return re;
+	}
+	//로그인 처리
+	public static MemberVo login(HashMap map) {
+		MemberVo m = null;
+		SqlSession session = 
+		sqlSessionFactory.openSession();
+		m = session.selectOne("member.login", map);
+		session.close();
+		return m;
 	}
 }

@@ -24,7 +24,9 @@ public class JoinMemberContoller {
 	public ModelAndView submit(String to, HttpSession session) {
 		Random r = new Random();
 		String msg  =  r.nextInt(10) +""+r.nextInt(10)+""+r.nextInt(10)+""+r.nextInt(10);
+		//임의 코드 4자리 설정
 		BitSms.sendMsg(to, msg);
+		// to : 핸드폰번호 / msg 코드 번호 발송 기능
 		session.setAttribute("sendMsg", msg);
 		ModelAndView mav = new ModelAndView("redirect:/joinOk.do");
 		return mav;

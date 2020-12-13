@@ -6,4 +6,12 @@
 	<insert id="insert">
 		insert into member values(#{id},#{pwd},#{name},#{tel})
 	</insert>
+	<select id="login" resultType="memberVo">
+ 	select
+     	id, pwd
+	from
+    	 member
+ 	where id = #{id}
+     	and pwd = #{pwd}
+</select>		
 </mapper>
