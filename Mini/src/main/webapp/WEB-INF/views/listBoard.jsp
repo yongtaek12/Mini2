@@ -18,9 +18,9 @@
 </head>
 <body>
 <div class="container">
-	<h2>게시물 목록</h2>
+	<h2>미니 게시판</h2>
 	<hr>
-	<h3> ${name } 님 ! 게시판에 오신걸 환영합니다 .. <a href="logout.do">로그아웃</a></h3>
+	<h3> ${name } 님 ! 게시판에 오신걸 환영합니다 <a href="logout.do">로그아웃</a></h3>
 	<a href="insertBoard.do">게시물 등록</a><br>
 	<table class="table table-hover">
 	<thead>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,13 +38,11 @@ public class loginController {
 		HttpSession session = req.getSession();
 		HashMap map = new HashMap();
 		String id = vo.getId();
-		System.out.println("tesddddddddddddddt"+id);
 		String pwd = vo.getPwd();
 		map.put("id", id);
 		map.put("pwd", pwd);
 
 		MemberVo login = dao.login(map);
-		System.out.println("w=작동됌" + login);
 		ModelAndView mav = new ModelAndView("redirect:/");
 		if(login !=null) {
 		session.setAttribute("name", login.getName());
@@ -56,9 +55,9 @@ public class loginController {
 	
 	@RequestMapping(value = "/logout.do", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception{
-		
+
 		session.invalidate();
 		
-		return "redirect:/";
+		return "redirect:/alert.do";
 	}
 }

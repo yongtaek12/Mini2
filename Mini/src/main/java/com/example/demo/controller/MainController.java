@@ -11,5 +11,10 @@ public class MainController {
 		@RequestMapping("/index.do")
 		public void main() {		
 		}
-		
+		@RequestMapping("/alert.do")
+		public void alert() {		
+		}
+		@RequestMapping("/signup.do")
+		public void signup() {		
+		}
 	}
