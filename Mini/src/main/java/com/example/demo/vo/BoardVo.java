@@ -19,6 +19,7 @@ public class BoardVo {
 	private String fname;
 	private MultipartFile uploadFile;
 	private String ip;
+	private int fsize;
 	
 	public String getFname() {
 		return fname;
@@ -95,6 +96,12 @@ public class BoardVo {
 	
 	
 	
+	public int getFsize() {
+		return fsize;
+	}
+	public void setFsize(int fsize) {
+		this.fsize = fsize;
+	}
 	public String getIp() {
 		return ip;
 	}
@@ -118,6 +125,25 @@ public class BoardVo {
 		this.fname = fname;
 		this.uploadFile = uploadFile;
 		this.ip = ip;
+	}
+	
+	public BoardVo(int no, String title, String writer, String pwd, String content, Date regdate, int hit, int b_ref,
+			int b_level, int b_step, String fname, MultipartFile uploadFile, String ip, int fsize) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.writer = writer;
+		this.pwd = pwd;
+		this.content = content;
+		this.regdate = regdate;
+		this.hit = hit;
+		this.b_ref = b_ref;
+		this.b_level = b_level;
+		this.b_step = b_step;
+		this.fname = fname;
+		this.uploadFile = uploadFile;
+		this.ip = ip;
+		this.fsize = fsize;
 	}
 	public BoardVo() {
 		super();

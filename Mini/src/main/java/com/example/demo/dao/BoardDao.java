@@ -14,22 +14,37 @@ import com.example.demo.vo.BoardVo;
 @Repository
 public class BoardDao {
 
-	public List<BoardVo> findAll(){
-		return BoardManager.findAll();
+	public int getTotalCount() {
+		return BoardManager.getTotalCount();
 	}
-	public BoardVo findByNo(int no) {
-		return BoardManager.findByNo(no);
+	
+	public int delete(HashMap map) {
+		return BoardManager.delete(map);
 	}
+	
+	public int update(BoardVo b) {
+		return BoardManager.update(b);
+	}
+	
+	public int getNextNo() {
+		return BoardManager.getNextNo();
+	}
+	
+	public List<BoardVo> findAll(HashMap map){
+		return BoardManager.findAll(map);
+	}
+	
 	public int insert(BoardVo b) {
 		return BoardManager.insert(b);
 	}
-	public int getNextNo() {
-		// TODO Auto-generated method stub
-		return BoardManager.getNextNo();
+	
+	public BoardVo findByNo(int no) {
+		return BoardManager.findByNo(no);
 	}
-
+	
 	public int updateStep(HashMap map) {
-		// TODO Auto-generated method stub
 		return BoardManager.updateStep(map);
 	}
+
+
 }

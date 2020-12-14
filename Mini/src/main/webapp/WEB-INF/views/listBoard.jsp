@@ -41,6 +41,11 @@
 		</c:forEach>
 	</table>
 	<br>
+		<hr>
+	
+	<c:forEach var="i" begin="1" end="${totalPage }">
+		<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp;
+	</c:forEach>
 	<br>
 	</div>
 
