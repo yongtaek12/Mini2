@@ -36,6 +36,10 @@ public class MemberVo {
 		this.name = name;
 		this.tel = tel;
 	}
+	@Override
+	public String toString() {
+		return "MemberVo [id=" + id + ", pwd=" + pwd + ", name=" + name + ", tel=" + tel + "]";
+	}
 	
 	
 }
