@@ -48,8 +48,9 @@
 	</script>
 
 <body>
-	<section id="container">
-		<form action="insertMember.do" method="post">
+	<div id="container">
+	<h2>회원가입</h2>
+ 		<form action="insertMember.do" method="post">
 			<div class="form-group has-feedback">
 				<label class="control-label" for="id">아이디</label> <input
 					class="form-control" type="text" id="id" name="id" />
@@ -71,7 +72,7 @@
 				<button class="cencle btn btn-danger" type="button">취소</button>
 			</div>
 		</form>
-	</section>
+	</div>
 
 </body>
 
